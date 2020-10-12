@@ -17,25 +17,6 @@
         background-size: cover;
       }
     </style>
-
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>  
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>    
-    <script type="text/javascript">  
-          (function () {  
-              'use strict';  
-              window.addEventListener('load', function () {  
-                  var form = document.getElementById('needs-validation');  
-                  form.addEventListener('submit', function (event) {  
-                      if (form.checkValidity() === false) {  
-                          event.preventDefault();  
-                          event.stopPropagation();  
-                      }  
-                      form.classList.add('was-validated');  
-                  }, false);  
-              }, false);  
-          })();  
-    </script>  
   </head>
   <body>
 
@@ -45,23 +26,25 @@
         <img src="HW_logo.png" alt="Homework" width="200" height="150">
         <h1>Checkout Form</h1>
         <p style="padding-bottom: 50px;">Below is a checkout form built using HTML, CSS, Javascript, and Bootstrap</p>
-        
       </div>
 
       <div class="row">
         <div class="col-md-8">
 
-          <form id="needs-validation" novalidate>
+          <form action="#">
             <div class="form-group">
+              <h3>Billing Address</h3>
               <div class="row">
+
                 <div class="col-md-6">
                   <label for="inputFirstname">First Name</label>
                   <input type="text" class="form-control" id="inputFirstname" placeholder="First name">
-                  <div class="invalid-feedback">First Name is required</div>
+                  <div class="invalid-feedback" id="invalidFirstName">First Name is required</div>
                 </div>
                 <div class="col-md-6">
                   <label for="inputLastname">Last Name</label>
                   <input type="text" class="form-control" id="inputLastname" placeholder="Last name">
+                  <div class="invalid-feedback" id="invalidLastname">Last Name is required</div>
                 </div>
               </div>
             </div>
@@ -72,16 +55,18 @@
                   <span class="input-group-text" id="basic-addon1">@</span>
                 </div>
                 <input type="text" class="form-control" placeholder="Username" aria-label="Username" aria-describedby="basic-addon1" id="inputUsername">
+                <div class="invalid-feedback" id="invalidUsername">Username is required</div>
               </div>
             </div>
             <div class="form-group">
               <label for="inputEmail">Email</label>
               <span class="text-muted">(Optional)</span>
-              <input type="email" class="form-control" id="inputEmail" placeholder="Email">
+              <input type="email" class="form-control" id="inputEmail" placeholder="user@email.com">
             </div>
             <div class="form-group">
               <label for="inputAddress">Address</label>
               <input type="text" class="form-control" id="inputAddress" placeholder="1234 Main St">
+              <div class="invalid-feedback" id="invalidAddress">Address is required</div>
             </div>
             <div class="form-group" id="address2" style="display:block">
               <label for="inputAddress2">Address 2</label>
@@ -92,6 +77,7 @@
               <div class="form-group col-md-6">
                 <label for="inputCity">City</label>
                 <input type="text" class="form-control" id="inputCity">
+                <div class="invalid-feedback" id="invalidCity">City is required</div>
               </div>
               <div class="form-group col-md-4">
                 <label for="inputState">State</label>
@@ -99,10 +85,12 @@
                   <option selected>Choose...</option>
                   <option>New York</option>
                 </select>
+                <div class="invalid-feedback" id="invalidState">State is required</div>
               </div>
               <div class="form-group col-md-2">
                 <label for="inputZip">Zip</label>
                 <input type="text" class="form-control" id="inputZip">
+                <div class="invalid-feedback" id="invalidZip">Zip is required</div>
               </div>
             </div>
             <div class="form-group">
@@ -145,22 +133,26 @@
                 <div class="col-md-6">
                   <label for="inputFirstname">Name on card</label>
                   <input type="text" class="form-control" id="inputNameOnCard" placeholder="Full Name">
+                  <div class="invalid-feedback" id="invalidNameOnCard">Name on Card is required</div>
                 </div>
                 <div class="col-md-6">
                   <label for="inputLastname">Credit Card Number</label>
                   <input type="text" class="form-control" id="inputCreditCardNumber" placeholder="XXXX-XXXX-XXXX-XXXX">
+                  <div class="invalid-feedback" id="invalidCreditCardNumber">Credit Card Number is required</div>
                 </div>
               </div>
             </div>
             <div class="form-group">
               <div class="row">
                 <div class="col-md-4">
-                  <label for="inputFirstname">Expiration</label>
-                  <input type="date" class="form-control" id="inputExperation" >
+                  <label for="inputExpiration">Expiration</label>
+                  <input type="date" class="form-control" id="inputExpiration" >
+                  <div class="invalid-feedback" id="invalidExpiration">Expiration is required</div>
                 </div>
                 <div class="col-md-4">
-                  <label for="inputLastname">CVV</label>
+                  <label for="inputCVV">CVV</label>
                   <input type="text" class="form-control" id="inputCVV" placeholder="XXX">
+                  <div class="invalid-feedback" id="invalidCVV">CVV is required</div>
                 </div>
               </div>
             </div>
@@ -168,7 +160,7 @@
               <hr style="padding-bottom: 20px;">
             </div>
             <div class="form-group">
-              <button type="submit" class="btn btn-primary" style="width: 100%;">Continue to Checkout</button>
+              <button type="submit" class="btn btn-primary" style="width: 100%;" onclick="checkBlank()">Continue to Checkout</button>
             </div>
           </form>
         </div>
@@ -210,114 +202,7 @@
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
 
-    <script>
-      function unshow(box){
-        var chbox = document.getElementById('gridCheck');
-        var vis = "block";
-        if(chbox.checked){
-          vis = "none";
-        }
-        document.getElementById(box).style.display = vis;
-        
-      }
-    </script>
+    <script src="scripts.js"></script>
 
-<!--
-    <script>
-      /*
-      function checkBlank(){
-        var notBlank = true;
-        if(document.getElementById('inputFirstname').value == ""){
-          document.getElementById('inputFirstname').style.borderColor = "red";
-          notBlank = false;
-        }
-        else
-          document.getElementById('inputFirstname').style.borderColor = "green";
-
-        if(document.getElementById('inputLastname').value == ""){
-          document.getElementById('inputLastname').style.borderColor = "red";
-          notBlank = false;
-        }
-        else
-          document.getElementById('inputLastname').style.borderColor = "green";
-
-        if(document.getElementById('inputUsername').value == ""){
-          document.getElementById('inputUsername').style.borderColor = "red";
-          notBlank = false;
-        }
-        else
-          document.getElementById('inputUsername').style.borderColor = "green";
-
-        if(document.getElementById('inputEmail').value == ""){
-          document.getElementById('inputEmail').style.borderColor = "green";
-          notBlank = false;
-        }
-
-        if(document.getElementById('inputAddress').value == ""){
-          document.getElementById('inputAddress').style.borderColor = "red";
-          notBlank = false;
-        }
-        else
-          document.getElementById('inputAddress').style.borderColor = "green";
-
-        if(document.getElementById('inputAddress2').value == ""){
-          document.getElementById('inputAddress2').style.borderColor = "green";
-          notBlank = false;
-        }
-
-        if(document.getElementById('inputCity').value == ""){
-          document.getElementById('inputCity').style.borderColor = "red";
-          notBlank = false;
-        }
-        else
-          document.getElementById('inputCity').style.borderColor = "green";
-
-        if(document.getElementById('inputState').value == ""){
-          document.getElementById('inputState').style.borderColor = "red";
-          notBlank = false;
-        }
-        else
-          document.getElementById('inputState').style.borderColor = "green";
-
-        if(document.getElementById('inputZip').value == ""){
-          document.getElementById('inputZip').style.borderColor = "red";
-          notBlank = false;
-        }
-        else
-          document.getElementById('inputZip').style.borderColor = "green";
-
-        if(document.getElementById('inputNameOnCard').value == ""){
-          document.getElementById('inputNameOnCard').style.borderColor = "red";
-          notBlank = false;
-        }
-        else
-          document.getElementById('inputNameOnCard').style.borderColor = "green";
-
-        if(document.getElementById('inputCreditCardNumber').value == ""){
-          document.getElementById('inputCreditCardNumber').style.borderColor = "red";
-          notBlank = false;
-        }
-        else
-          document.getElementById('inputCreditCardNumber').style.borderColor = "green";
-
-        if(document.getElementById('inputExperation').value == ""){
-          document.getElementById('inputExperation').style.borderColor = "red";
-          notBlank = false;
-        }
-        else
-          document.getElementById('inputExperation').style.borderColor = "green";
-
-        if(document.getElementById('inputCVV').value == ""){
-          document.getElementById('inputCVV').style.borderColor = "red";
-          notBlank = false;
-        }
-        else
-          document.getElementById('inputCVV').style.borderColor = "green";
-
-        return notBlank;
-      }
-      */
-    </script>
--->
   </body>
 </html>
