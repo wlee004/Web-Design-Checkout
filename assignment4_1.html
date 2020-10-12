@@ -82,8 +82,9 @@
               <div class="form-group col-md-4">
                 <label for="inputState">State</label>
                 <select id="inputState" class="form-control">
-                  <option selected>Choose...</option>
+                  <option value>Choose...</option>
                   <option>New York</option>
+                  <option>Other</option>
                 </select>
                 <div class="invalid-feedback" id="invalidState">State is required</div>
               </div>
@@ -169,23 +170,72 @@
           <h5>
             <div class="row">
               <div class="col-md-8">
-                <p>My Cart</p>
+                <h5>My Cart</h5>
               </div>
               <div class="col-md-4 text-right">
-                <span class="badge badge-primary badge-pill">14</span>
+                <span class="badge badge-primary badge-pill">4</span>
               </div>
             </div>
           </h5>
           <ul class="list-group">
-            <li class="list-group-item">Cras justo odio</li>
-            <li class="list-group-item">Dapibus ac facilisis in</li>
-            <li class="list-group-item">Morbi leo risus</li>
-            <li class="list-group-item">Porta ac consectetur ac</li>
-            <li class="list-group-item">Vestibulum at eros</li>
+            <li class="list-group-item">
+            <div class="row">
+              <div class="col-md-9">
+                <h6>Intel Core i9-10900K</h6>
+                <small>CPU</small>
+              </div>
+              <div class="col-md-3">
+                <span>$669.99</span>
+              </div>
+            </div>
+            </li>
+            <li class="list-group-item">
+              <div class="row">
+                <div class="col-md-9">
+                  <h6>GEFORCE RTX 3090</h6>
+                  <small>GPU</small>
+                </div>
+                <div class="col-md-3">
+                  <span style="text-align: right">$1,499.00</span>
+                </div>
+              </div>
+            </li>
+            <li class="list-group-item">
+              <div class="row">
+                <div class="col-md-9">
+                  <h6>Samsung 970 EVO NVMe M.2 1TB</h6>
+                  <small>SSD</small>
+                </div>
+                <div class="col-md-3">
+                  <span>$149.99</span>
+                </div>
+              </div>
+            </li>
+            <li class="list-group-item">
+              <div class="row">
+                <div class="col-md-9">
+                  <h6>Corsair RM850x</h6>
+                  <small>PSU</small>
+                </div>
+                <div class="col-md-3">
+                  <span>$144.99</span>
+                </div>
+              </div>
+            </li>
+            <li class="list-group-item">
+              <div class="row">
+                <div class="col-md-9">
+                  <h6>Total</h6>
+                </div>
+                <div class="col-md-3">
+                  <span>$2463.97</span>
+                </div>
+              </div>
+            </li>
           </ul>
           <div class="card p-1">
             <div class="input-group">
-              <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+              <input type="text" class="form-control" id="promocode" placeholder="Promo code">
               <input class="btn btn-primary" type="button" value="Input">
             </div>
           </div>
