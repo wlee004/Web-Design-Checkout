@@ -9,6 +9,14 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
 
     <title>HW 4 Part 1</title>
+    <style>
+      body {
+        background-image: url('Background-website-01.jpg');
+        background-repeat: no-repeat;
+        background-attachment: fixed;  
+        background-size: cover;
+      }
+    </style>
   </head>
   <body>
 
@@ -25,7 +33,7 @@
         <div class="col-md-8">
 
           <form>
-            <div class="form-group" style="padding-top: 15px;">
+            <div class="form-group">
               <div class="row">
                 <div class="col-md-6">
                   <label for="inputFirstname">First Name</label>
@@ -82,12 +90,60 @@
               <div class="form-check">
                 <input class="form-check-input" type="checkbox" id="gridCheck">
                 <label class="form-check-label" for="gridCheck">
-                  Check me out
+                  Shipping address is the same as my billing address
                 </label>
               </div>
             </div>
             <div class="form-group">
               <hr>
+            </div>
+            <div class="form-group">
+              <h5>Payment</h5>
+              <div class="form-check">
+                <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="option1" checked>
+                <label class="form-check-label" for="exampleRadios1">
+                  Credit Card
+                </label>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios2" value="option2">
+                <label class="form-check-label" for="exampleRadios2">
+                  Debit Card 
+                </label>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios2" value="option2">
+                <label class="form-check-label" for="exampleRadios2">
+                  Paypal
+                </label>
+              </div>
+            </div>
+            <div class="form-group">
+              <div class="row">
+                <div class="col-md-6">
+                  <label for="inputFirstname">Name on card</label>
+                  <input type="text" class="form-control" id="inputNameOnCard" placeholder="Full Name">
+                </div>
+                <div class="col-md-6">
+                  <label for="inputLastname">Credit Card Number</label>
+                  <input type="text" class="form-control" id="inputCreditCardNumber" placeholder="XXXX-XXXX-XXXX-XXXX">
+                </div>
+              </div>
+            </div>
+            <div class="form-group">
+              <div class="row">
+                <div class="col-md-4">
+                  <label for="inputFirstname">Expiration</label>
+                  <input type="date" class="form-control" id="inputExperation" >
+                </div>
+                <div class="col-md-4">
+                  <label for="inputLastname">CVV</label>
+                  <input type="text" class="form-control" id="inputCVV" placeholder="XXX">
+                </div>
+              </div>
+            </div>
+            <div class="form-group">
+              <hr style="padding-bottom: 20px;">
             </div>
             <div class="form-group">
               <button type="submit" class="btn btn-primary" style="width: 100%;">Continue to Checkout</button>
@@ -121,6 +177,9 @@
           </div>
         </div>
       </div>
+      <footer class="text-center" style="padding-top: 100px; padding-bottom:20px">
+        2020 - William Lee
+      </footer>
 
     </div>
 
