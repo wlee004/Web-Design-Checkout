@@ -38,12 +38,12 @@
 
                 <div class="col-md-6">
                   <label for="inputFirstname">First Name</label>
-                  <input type="text" class="form-control" id="inputFirstname" placeholder="First name">
+                  <input type="text" class="form-control" id="inputFirstname" placeholder="First name" required>
                   <div class="invalid-feedback" id="invalidFirstName">First Name is required</div>
                 </div>
                 <div class="col-md-6">
                   <label for="inputLastname">Last Name</label>
-                  <input type="text" class="form-control" id="inputLastname" placeholder="Last name">
+                  <input type="text" class="form-control" id="inputLastname" placeholder="Last name" required>
                   <div class="invalid-feedback" id="invalidLastname">Last Name is required</div>
                 </div>
               </div>
@@ -54,7 +54,7 @@
                 <div class="input-group-prepend">
                   <span class="input-group-text" id="basic-addon1">@</span>
                 </div>
-                <input type="text" class="form-control" placeholder="Username" aria-label="Username" aria-describedby="basic-addon1" id="inputUsername">
+                <input type="text" class="form-control" placeholder="Username" aria-label="Username" aria-describedby="basic-addon1" id="inputUsername" required>
                 <div class="invalid-feedback" id="invalidUsername">Username is required</div>
               </div>
             </div>
@@ -65,7 +65,7 @@
             </div>
             <div class="form-group">
               <label for="inputAddress">Address</label>
-              <input type="text" class="form-control" id="inputAddress" placeholder="1234 Main St">
+              <input type="text" class="form-control" id="inputAddress" placeholder="123-45 Main St" required>
               <div class="invalid-feedback" id="invalidAddress">Address is required</div>
             </div>
             <div class="form-group" id="address2" style="display:block">
@@ -76,12 +76,12 @@
             <div class="form-row md-3">
               <div class="form-group col-md-6">
                 <label for="inputCity">City</label>
-                <input type="text" class="form-control" id="inputCity">
+                <input type="text" class="form-control" id="inputCity" required>
                 <div class="invalid-feedback" id="invalidCity">City is required</div>
               </div>
               <div class="form-group col-md-4">
                 <label for="inputState">State</label>
-                <select id="inputState" class="form-control">
+                <select id="inputState" class="form-control" required>
                   <option value>Choose...</option>
                   <option>New York</option>
                   <option>Other</option>
@@ -90,7 +90,7 @@
               </div>
               <div class="form-group col-md-2">
                 <label for="inputZip">Zip</label>
-                <input type="text" class="form-control" id="inputZip">
+                <input type="text" class="form-control" id="inputZip" required>
                 <div class="invalid-feedback" id="invalidZip">Zip is required</div>
               </div>
             </div>
@@ -123,8 +123,8 @@
                 </label>
               </div>
               <div class="form-check">
-                <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios2" value="option2">
-                <label class="form-check-label" for="exampleRadios2">
+                <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios3" value="option3">
+                <label class="form-check-label" for="exampleRadios3">
                   Paypal
                 </label>
               </div>
@@ -133,12 +133,12 @@
               <div class="row">
                 <div class="col-md-6">
                   <label for="inputFirstname">Name on card</label>
-                  <input type="text" class="form-control" id="inputNameOnCard" placeholder="Full Name">
+                  <input type="text" class="form-control" id="inputNameOnCard" placeholder="Full Name" required>
                   <div class="invalid-feedback" id="invalidNameOnCard">Name on Card is required</div>
                 </div>
                 <div class="col-md-6">
                   <label for="inputLastname">Credit Card Number</label>
-                  <input type="text" class="form-control" id="inputCreditCardNumber" placeholder="XXXX-XXXX-XXXX-XXXX">
+                  <input type="text" class="form-control" id="inputCreditCardNumber" placeholder="XXXX-XXXX-XXXX-XXXX" required>
                   <div class="invalid-feedback" id="invalidCreditCardNumber">Credit Card Number is required</div>
                 </div>
               </div>
@@ -147,12 +147,12 @@
               <div class="row">
                 <div class="col-md-4">
                   <label for="inputExpiration">Expiration</label>
-                  <input type="date" class="form-control" id="inputExpiration" >
+                  <input type="date" class="form-control" id="inputExpiration" required>
                   <div class="invalid-feedback" id="invalidExpiration">Expiration is required</div>
                 </div>
                 <div class="col-md-4">
                   <label for="inputCVV">CVV</label>
-                  <input type="text" class="form-control" id="inputCVV" placeholder="XXX">
+                  <input type="text" class="form-control" id="inputCVV" placeholder="XXX" required>
                   <div class="invalid-feedback" id="invalidCVV">CVV is required</div>
                 </div>
               </div>
